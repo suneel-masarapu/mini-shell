@@ -23,7 +23,7 @@ A simple **Unix-like shell implementation in C** that supports command execution
 
 ## ⚡ Compilation  
 ```bash
-gcc 2022MT11942_a1.c -o myshell
+gcc shell.c -o myshell
 ```
 
 ## 🚀 Usage  
@@ -34,7 +34,7 @@ Run the shell:
 
 You’ll see a custom prompt:  
 ```
-MTL458 >
+shell >
 ```
 
 Now try:  
@@ -48,7 +48,7 @@ ls | grep ".c" > out.txt
 
 ## 📂 Project Structure  
 - `shell.c` → Main implementation of the shell
-- `assignment.pdf` ->instrucntions to build it
+- `instructions.pdf` ->you can try building from this
 
 ## 🛠️ Requirements  
 - Linux / Unix environment  
