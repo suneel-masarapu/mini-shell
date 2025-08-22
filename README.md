@@ -47,7 +47,8 @@ ls | grep ".c" > out.txt
 ```
 
 ## 📂 Project Structure  
-- `shell.c` → Main implementation of the shell  
+- `shell.c` → Main implementation of the shell
+- `assignment.pdf` ->instrucntions to build it
 
 ## 🛠️ Requirements  
 - Linux / Unix environment  
