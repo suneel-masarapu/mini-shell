@@ -487,7 +487,7 @@ int handleAND(char *input){
         //printf("Executing command: %s\n", parsed[i]);
         temp = excuteBasic(parsed[i]);
         if(temp == -1){
-            fprintf(stderr, "Error at %s:%d: failed to execute '%s'\n", __FILE__, __LINE__, parsed[i]);
+            //fprintf(stderr, "Error at %s:%d: failed to execute '%s'\n", __FILE__, __LINE__, parsed[i]);
             flag = false;
             return -1;
         }
@@ -509,8 +509,7 @@ int handle(char *input){
         }
         int status = handleAND(commands[i]);
         if(status == -1){
-            freeStringList(commands);
-            return -1;
+            printf("Invalid Command\n");
         }
     }
     freeStringList(commands);
@@ -560,7 +559,8 @@ int handleTerminal(char *input){
     int count = 0;
     while(true){
         char c = getchar();
-        if(c == '\n'){
+        if(c == '\r')continue;
+        if(c == '\n' || c == EOF){
             putchar('\n');
             input[count] = '\0';
             fflush(stdout);
@@ -623,10 +623,7 @@ int main(){
             continue;
         }
         int status = handle(input);
-        if(status == -1){
-            printf("Invalid Command\n");
-            continue;
-        }
+        //debug_print(input);
     }
     restore(&dlt);
     return 0;
